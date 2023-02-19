@@ -1,0 +1,44 @@
+@import "_mixin";
+@import "reset";
+
+body {
+  background-color: red;
+}
+.container {
+  display:grid;
+  grid-template-columns: 1fr min(1080px, 100% - 20px * 2) 1fr;
+
+  & > * {
+    grid-column: 2
+  }
+
+}
+.full-width {
+  grid-column: 1/-1;
+}
+
+.l-header {
+  background-color: chartreuse;
+  height: 80px;
+  // ...
+  &__inner {
+    // ...
+    @extend.container;
+  }
+  &__logo {
+    // ...
+  }
+  &__logo-link {
+    // ...
+  }
+
+  &__ {
+  }
+}
+
+.about {
+
+  @extend.full-width;
+}
+
+
